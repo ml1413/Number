@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:toolc="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/windowBackground"
+    tools:context=".UI.fragments.InfoScreenFragment">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="32dp"
+        android:background="@color/black"
+        toolc:cardCornerRadius="8dp"
+        toolc:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="32dp">
+
+            <TextView
+                android:id="@+id/tv_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="34" />
+
+            <TextView
+                android:id="@+id/tv_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                tools:text="2012 is the year that the century second and last solar transit of Venus occurs on June 6" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.fragments.FirstScreenFragment">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@id/edit_text"
+        app:layout_constraintStart_toStartOf="@id/edit_text"
+        app:layout_constraintTop_toBottomOf="@id/edit_text" />
+
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:hint="99"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textSize="16.sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bt_get"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/get_info"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progress_bar" />
+
+    <Button
+        android:id="@+id/bt_random"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/random"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_get" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="5"
+        tools:listitem="@layout/item_rv_first_screen" />
+</androidx.constraintlayout.widget.ConstraintLayout>

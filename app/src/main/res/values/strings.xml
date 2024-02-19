@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Number</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    //first screen fragment
+    <string name="get_info">get info</string>
+    <string name="random">random</string>
+</resources>
