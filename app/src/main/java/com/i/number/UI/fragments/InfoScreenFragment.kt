@@ -1,6 +1,7 @@
 package com.i.number.UI.fragments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,7 +29,6 @@ class InfoScreenFragment : Fragment() {
                     putBoolean(KEY_ADD_HISTORY, addInHistory)
                 }
             }
-
     }
 
     private var addInHistory: Boolean = false
@@ -39,6 +39,7 @@ class InfoScreenFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        Log.d("TAG1", "onCreateView: $this")
         arguments?.let { addInHistory = it.getBoolean(KEY_ADD_HISTORY) }
         binding = FragmentInfoScreenBinding.inflate(inflater, container, false)
         return binding.root
@@ -51,7 +52,10 @@ class InfoScreenFragment : Fragment() {
             when (myResource) {
                 is MyResource.Success -> {
                     val modelNumber = myResource.data
-                    if (addInHistory) setValueInViewModelHistory(modelNumber)
+                    if (addInHistory) {
+                        arguments = Bundle().apply { putBoolean(KEY_ADD_HISTORY, false) }
+                        setValueInViewModelHistory(modelNumber)
+                    }
                     setDataInView(modelNumber = modelNumber)
                 }
 
